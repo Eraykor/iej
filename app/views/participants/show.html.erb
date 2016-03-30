@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @participant.picture.url(:medium) %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @participant.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @participant.first_name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @participant.birth_date %>
+</p>
+
+<p>
+  <strong>Place of birth:</strong>
+  <%= @participant.place_of_birth %>
+</p>
+
+<p>
+  <strong>Id number:</strong>
+  <%= @participant.id_number %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @participant.adress %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @participant.zip_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @participant.city %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @participant.phone %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @participant.mobile %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+    <%= @participant.email %>
+</p>
+
+<p>
+  <strong>Affiliation process:</strong>
+  <%= @participant.affiliation_process %>
+</p>
+
+<p>
+  <strong>Entry process:</strong>
+  <%= @participant.entry_process %>
+</p>
+
+<p>
+  <strong>Expected process:</strong>
+  <%= @participant.expected_process %>
+</p>
+
+<p>
+  <strong>Entry solution:</strong>
+  <%= @participant.entry_solution %>
+</p>
+
+<p>
+  <strong>Output solution:</strong>
+  <%= @participant.output_solution %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>
