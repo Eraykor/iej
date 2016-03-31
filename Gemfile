@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "twitter-bootstrap-rails"
 gem 'rails-admin-scaffold'
 gem 'thin'
 gem 'prawn'
