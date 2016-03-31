@@ -5,6 +5,25 @@ class Participant < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :picture, matches: [/\png\Z/, /\jpe?g\Z/, ]
   validates_with AttachmentSizeValidator, attributes: :picture, less_than: 700.kilobytes
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :birth_date, presence: true
+  validates :place_of_birth, presence: true
+  validates :id_number, presence: true
+  validates :adress, presence: true
+  validates :zip_code, presence: true
+  validates :city, presence: true
+  validates :phone, presence: true
+  validates :mobile, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :affiliation_process, presence: true
+  validates :entry_process, presence: true
+  validates :expected_process, presence: true
+  validates :entry_solution, presence: true
+  validates :output_solution, presence: true
+  validates :created_at, presence: true
+  validates :updated_at, presence: true
+
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
