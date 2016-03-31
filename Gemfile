@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails-admin-scaffold'
 gem 'thin'
 gem 'prawn'
 gem 'prawn-table'

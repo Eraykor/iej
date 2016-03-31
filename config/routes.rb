@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :employees
+  end
   resources :participants do
     collection { post :import }
   end
