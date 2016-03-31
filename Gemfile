@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "twitter-bootstrap-rails"
 gem 'rails-admin-scaffold'
 gem 'thin'
 gem 'prawn'
@@ -32,11 +33,6 @@ gem 'sorcery'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# gem bootstrap
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
