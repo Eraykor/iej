@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'thin'
 gem 'prawn'
 gem 'prawn-table'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
