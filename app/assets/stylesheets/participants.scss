@@ -1,3 +1,45 @@
 // Place all the styles related to the Participants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.checkbox{
+  width:50px
+}
+
+.inline {
+display: inline-block;
+}
+
+label {
+min-width: 120px;
+font-weight: normal;
+color: #428bca
+}
+.titleprghp {
+background:#555;
+height: 46px;
+color: #000;
+font-size: 23px;
+height: 46px;
+line-height: 40px;
+padding: 0 0 0 20px;
+margin: 20px 0 20px;
+}
+
+.submit {
+  background-color: red;
+}
+
+.list-group-item {
+  border: none;
+  line-height:3px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+li .list-group-item{
+  line-height:3px;
+  list-style: none
+}
