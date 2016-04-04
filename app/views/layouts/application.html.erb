@@ -8,6 +8,21 @@
 </head>
 <body>
 
+  <div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", participants_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+    <% else %>
+      <%= link_to "New Employee", new_employee_path %> |
+      <%= link_to "New Admin Employee", new_admin_employee_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+  </div>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+
 <%= yield %>
 
 </body>

@@ -1,5 +1,6 @@
 class Admin::EmployeesController < ApplicationController
   before_action :set_admin_employee, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
   # GET /admin/employees
   # GET /admin/employees.json
@@ -69,6 +70,6 @@ class Admin::EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_employee_params
-      params.require(:admin_employee).permit(:last_name, :first_name, :organization, :phone, :email, :id_number)
+      params.require(:admin_employee).permit(:last_name, :first_name, :organization, :phone, :email, :id_number, :password, :password_confirmation)
     end
 end
