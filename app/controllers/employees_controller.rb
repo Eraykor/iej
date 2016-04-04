@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
   # GET /employees
   # GET /employees.json
@@ -25,7 +26,7 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
-    @employee = Employee.new(employee_params)
+      @employee = Employee.new(employee_params)
 
     respond_to do |format|
       if @employee.save
@@ -70,6 +71,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:last_name, :first_name, :organization, :phone, :email, :id_number)
+      params.require(:employee).permit(:last_name, :first_name, :organization, :phone, :id_number, :email, :password, :password_confirmation)
     end
 end

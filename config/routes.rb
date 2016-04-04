@@ -1,17 +1,26 @@
 Rails.application.routes.draw do
+  root 'user_sessions#new'
+  resources :user_sessions
+  resources :employees
+  resources :admin_employees
+  resources :participants
+
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+    
   namespace :admin do
     resources :employees
   end
+
   resources :participants do
     collection { post :import }
   end
-  resources :employees
+
   resources :organizations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'participants#index'
     
    
 
