@@ -10,16 +10,37 @@
 </div>
 <% end %>
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
         <div class="panel-heading">
-        </div>
+          <h3 class="panel-title"></h3>
+        </div> -->
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-4">
-              photo
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Photo de profil</h3>
+                </div>
+                <div class="panel-body">
+                  <!-- <div class="col-lg-6"> -->
+                  <div class="conteneur-img">
+                    <div class="img-thumbnail">
+                      <%= link_to image_tag("avatar.jpg") %>
+                    </div>
+                  </div>
+                  <!-- </div> -->
+                <!-- <div class="col-lg-6"> -->
+                <div class="larg-bloc">
+                  <div id="photo_attachment_container">
+                    <%= f.label :picture %><br><br>
+                    <%= f.file_field :photo %><br>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
             <div class="col-lg-4">
               <div class="panel panel-primary">
@@ -62,7 +83,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-lg-4">
               <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -108,7 +128,11 @@
                     </li>
                   </ul>
                 </div>
+<<<<<<< HEAD
               </div>
+=======
+          </div>
+>>>>>>> origin/cssparticipants
             </div>
           </div>
           <div class="row">
@@ -176,6 +200,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 
   <div class="field">
     <%= f.label :last_name %><br>
@@ -256,5 +281,13 @@
     <div class="pull-right">  <%= f.submit 'VALIDER', :class => 'span3 offset2 btn btn-primary submit_class_name_here block-right' %></div>
   </div>
 </div>
+=======
+  <!-- </div>
+</div> -->
+<div class="row-fluid">
+  <div class="pull-right"><%= f.submit 'VALIDER', :class => 'span3 offset2 btn btn-primary submit_class_name_here block-right' %></div>
+<!-- </div>
+>>>>>>> origin/cssparticipants
 </div>
+</div> -->
 <% end %>
