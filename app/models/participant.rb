@@ -5,6 +5,11 @@ class Participant < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :picture, matches: [/\png\Z/, /\jpe?g\Z/, ]
   validates_with AttachmentSizeValidator, attributes: :picture, less_than: 700.kilobytes
+
+  has_attached_file :document
+  validates_attachment :document, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf)}
+  validates_with AttachmentSizeValidator, attributes: :document, less_than: 1000.kilobytes
+
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :birth_date, presence: true
@@ -21,8 +26,7 @@ class Participant < ActiveRecord::Base
   validates :expected_process, presence: true
   validates :entry_solution, presence: true
   validates :output_solution, presence: true
-  validates :created_at, presence: true
-  validates :updated_at, presence: true
+
 
 
   def self.import(file)

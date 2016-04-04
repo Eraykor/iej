@@ -18,13 +18,13 @@ class ParticipantsController < ApplicationController
   def show
    @participant = Participant.find(params[:id])
 
-   respond_to do |format| 
-         format.html 
+   respond_to do |format|
+         format.html
          format.pdf do
              pdf = ReportPdf.new(@participant)
              send_data pdf.render, filename: "#{@participant.first_name}.pdf", type: "application/pdf"
-         end 
-      end 
+         end
+      end
   end
 
   # GET /participants/new
@@ -84,6 +84,6 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.require(:participant).permit(:last_name, :first_name, :birth_date, :place_of_birth, :id_number, :adress, :zip_code, :city, :phone, :mobile, :email, :affiliation_process, :entry_process, :expected_process, :entry_solution, :output_solution, :picture)
+      params.require(:participant).permit(:last_name, :first_name, :birth_date, :place_of_birth, :id_number, :adress, :zip_code, :city, :phone, :mobile, :email, :affiliation_process, :entry_process, :expected_process, :entry_solution, :output_solution, :picture, :document)
     end
 end

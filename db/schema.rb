@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331123212) do
+ActiveRecord::Schema.define(version: 20160404080149) do
 
   create_table "admin_employees", force: :cascade do |t|
     t.string   "last_name"
@@ -61,14 +61,19 @@ ActiveRecord::Schema.define(version: 20160331123212) do
     t.date     "expected_process"
     t.text     "entry_solution"
     t.text     "output_solution"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "participant"
     t.string   "email"
+    t.string   "document"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
 end
