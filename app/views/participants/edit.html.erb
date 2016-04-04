@@ -1,6 +1,17 @@
-<h3 class="panel-title">Editing Participant</h3>
+<!-- <h3 class="panel-title">Editing Participant</h3> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title center-left">Éditer un participant</h3>
+        </div>
+        <%= render 'form' %>
 
-<%= render 'form' %>
+  <div class="pull-right"><%= link_to 'Back', participants_path, :class => 'span3 offset2 btn btn-primary submit_class_name_here block-right' %></div>
+        <!-- <%= link_to 'Back', participants_path, :class => 'btn btn-primary pull-right'  %> -->
 
-<%= link_to 'Show', @participant , :class => 'btn btn-primary pull-left'%> |
-<%= link_to 'Back', participants_path, :class => 'btn btn-primary pull-left'  %>
+      </div>
+    </div>
+  </div>
+</div>
