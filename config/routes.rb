@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'user_sessions#new'
   resources :user_sessions
   resources :employees
-  resources :admin_employees
+  resources :admin
   resources :participants
 
   get 'login' => 'user_sessions#new', :as => :login
