@@ -14,6 +14,7 @@ min-width: 120px;
 font-weight: normal;
 color: #428bca
 }
+
 .titleprghp {
 background:#555;
 height: 46px;
@@ -26,12 +27,12 @@ margin: 20px 0 20px;
 }
 
 .submit {
-  background-color: red;
+
 }
 
 .list-group-item {
   border: none;
-  line-height:3px;
+  line-height:0px;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -41,5 +42,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 li .list-group-item{
   line-height:3px;
-  list-style: none
+  list-style: none;
+  margin: 0 0 9px 15px;
+}
+
+.list-group-item {
+  margin: 0;
 }
