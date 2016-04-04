@@ -1,0 +1,4 @@
+*.swp
+cache
+*.sqlite3
+log

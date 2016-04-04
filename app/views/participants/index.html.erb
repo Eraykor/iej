@@ -46,6 +46,7 @@
         <td><%= participant.expected_process %></td>
         <td><%= participant.entry_solution %></td>
         <td><%= participant.output_solution %></td>
+        <td><a href='<%= participant.document %>'/> participant.document_file_name</td>
         <td><%= link_to 'Show', participant %></td>
         <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
         <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
