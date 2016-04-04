@@ -1,3 +1,59 @@
 // Place all the styles related to the Organizations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ .top-buffer {
+   margin-top: 10px;
+ }
+
+.top-buffer2{
+  margin-top: 40px;
+}
+
+.list-group-item {
+  border: none;
+  line-height:3px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.submit {
+  background-color: red;
+}
+
+.list-group-item {
+  border: none;
+  line-height:3px;
+}
+
+li .list-group-item{
+  line-height:3px;
+  list-style: none
+}
+
+
+label {
+min-width: 120px;
+font-weight: normal;
+color: #428bca
+}
+
+.table {
+  overflow-y: hidden;
+}
+
+.table-reflow{
+  vertical-align:center;
+}
+
+th {
+  text-align:center;
+}
+
+.btn-primary{
+  margin-left:30px;
+  text-color:white;
+}
