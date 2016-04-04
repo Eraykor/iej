@@ -12,37 +12,44 @@
 
 <table class="table table-reflow">
   <thead>
-    <tr align="center">
-      <td>Nom</td>
-      <td>Adresse</td>
-      <td>code postal</td>
-      <td>Ville</td>
-      <td>Parent organization</td>
-      <td colspan="3"></td>
+    <tr>
+      <th>Nom</th>
+      <th>Adresse</th>
+      <th>code postal</th>
+      <th>Ville</th>
+      <th>Parent organization</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+
     <% @organizations.each do |organization| %>
+    <tr align="center">
         <td><%= organization.name %></td>
         <td><%= organization.adress %></td>
         <td><%= organization.zip_code %></td>
         <td><%= organization.city %></td>
         <td><%= organization.parent_organization %></td>
-        <td class="btn btn-default"><%= link_to 'Show', organization %></td>
-        <td class="btn btn-default"><%= link_to 'Edit', edit_organization_path(organization) %></td>
-        <td class="btn btn-default"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td class="btn btn-default btn-xs"><%= link_to 'Show', organization %></td>
+        <td class="btn btn-default btn-xs"><%= link_to 'Edit', edit_organization_path(organization) %></td>
+        <td class="btn btn-default btn-xs"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 
-
-    <% end %>
   </tbody>
+  <% end %>
 </table>
 
-<br>
-<%= link_to 'New Organization', new_organization_path %>
+</div>
+</div>
+</div>
+</div>
 
-</div>
-</div>
+<div class="container">
+<div class="row">
+  <div class="col-md-2 col-md-offset-10">
+    <div class="btn btn-primary">
+    <%= link_to 'New Organization', new_organization_path %>
+  </div>
+  </div>
 </div>
 </div>
