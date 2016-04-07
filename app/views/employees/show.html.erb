@@ -1,68 +1,95 @@
 <h1>listing Employees</h1>
 
 <div class="container">
- <div class="row top-buffer">
-   <div class="col-lg-12">
-       <div class="panel panel-primary">
-         <div class="panel-heading">
-         </div>  <div class="row top-buffer2">
-   <div class="col-lg-4 col-lg-offset-4">
-     <div class="panel panel-primary">
-       <div class="panel-heading">
-         <h3 class="panel-title">COORDONNÉES </h3>
-         </div>
-       <div class="panel-body">
-         <ul class="list-group list-unstyled">
-           <li class="list-group-item">
-              <li>Nom</li>
-            <div class="form-group">
-             <label for="texte"><%= @employee.last_name %></label>
-             </div>
-           </li>
-           <li class="list-group-item">
-             <li>Prénom</li>
-             <div class="form-group">
-               <label for="texte"><%= @employee.first_name %></label>
-             </div>
-             </li>
-             <li class="list-group-item">
-                <li>Organization</li>
-                 <div class="form-group">
-                   <label for="texte"><%= @employee.organization %></label>
-                   </div>
-                 </li>
-               <li class="list-group-item">
-                  <li>Téléphone</li>
-                 <div class="form-group">
-                   <label for="texte"><%= @employee.phone %></label>
-                     </div>
-                   </li>
-                   <li class="list-group-item">
-                      <li>Mail</li>
-                     <div class="form-group">
-                       <label for="texte"><%= @employee.email %></label>
-                           </div>
-                        </li>
-                        <li class="list-group-item">
-                           <li>Id n°</li>
-                          <div class="form-group">
-                            <label for="texte"><%= @employee.id_number %></label>
-                                </div>
-                             </li>
-                     <div class="row">
-                       <div class="col-lg-7 col-lg-offset-5">
-                         <li class="list-group-item">
-                           <div class="form-group">
-                             <div class="actions">
-                              <div class="pull-right"><%= link_to 'Retour', employees_path, :class => 'span3 offset2 btn btn-primary submit_class_name_here block-right' %></div>
-                             </div>
-                           </div>
-                         </li>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
+    <div class="row top-buffer">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                </div>
+                <div class="row top-buffer2">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">COORDONNÉES </h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group list-unstyled">
+                                    <li class="list-group-item">
+                                        <li>Nom</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.last_name %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Prénom</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.first_name %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Organization</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.organization %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Téléphone</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.phone %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Mail</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.email %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Id n°</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.id_number %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <li>Admin ?</li>
+                                        <div class="form-group">
+                                            <label for="texte">
+                                                <%= @employee.admin %>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <div class="row">
+                                        <div class="col-lg-7 col-lg-offset-5">
+                                            <li class="list-group-item">
+                                                <div class="form-group">
+                                                    <div class="actions">
+                                                        <div class="pull-right">
+                                                            <% if @current_user.admin? %>
+                                                            <%= link_to 'Retour', admin_root_url %>
+                                                            <% else %>
+                                                            <%= link_to 'Retour', :employees %>
+                                                            <% end %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

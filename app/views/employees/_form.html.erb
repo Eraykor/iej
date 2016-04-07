@@ -71,15 +71,23 @@
                           <%= f.password_field :password %><br>
                         </div>
                       </div>
-	            </li>
-		     <li class="list-group-item">
+	                </li>
+		            <li class="list-group-item">
                       <div class="form-group">
                         <div id="photo_attachment_container">
                           <%= f.label :password_confirmation %><br><br>
                           <%= f.password_field :password_confirmation %><br>
                         </div>
                       </div>
-                    </li>     
+                    </li>   
+                    <li class="list-group-item">
+                      <div class="form-group">
+                        <div id="form_group">
+                            <%= f.label :admin %><br><br>
+                            <%= f.check_box :admin %><br>
+                        </div>
+                      </div>
+	                </li>
                     <li class="list-group-item">
                       <div class="form-group">
                         <div class="actions">

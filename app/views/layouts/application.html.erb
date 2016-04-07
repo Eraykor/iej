@@ -10,7 +10,6 @@
 
   <div id="nav">
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_employee_path(current_user.id) %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "New Admin Employee", new_admin_employee_path %> |

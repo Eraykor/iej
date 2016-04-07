@@ -1,10 +1,10 @@
-<%= form_for(@admin_employee) do |f| %>
-  <% if @admin_employee.errors.any? %>
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@admin_employee.errors.count, "error") %> prohibited this admin_employee from being saved:</h2>
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this admin_employee from being saved:</h2>
 
       <ul>
-      <% @admin_employee.errors.full_messages.each do |message| %>
+      <% @employee.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -44,6 +44,6 @@
    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+      <%= f.submit %>
   </div>
 <% end %>

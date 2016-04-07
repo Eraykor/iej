@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404080149) do
+ActiveRecord::Schema.define(version: 20160405114132) do
 
   create_table "admin_employees", force: :cascade do |t|
     t.string   "last_name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160404080149) do
     t.datetime "updated_at",       null: false
     t.string   "crypted_password"
     t.string   "salt"
+    t.boolean  "admin"
   end
 
   create_table "organizations", force: :cascade do |t|

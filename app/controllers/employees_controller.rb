@@ -6,6 +6,7 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
+    @admin_employees = Admin::Employee.all
     @participants = Participant.all
   end
 
@@ -71,6 +72,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:last_name, :first_name, :organization, :phone, :id_number, :email, :password, :password_confirmation)
+      params.require(:employee).permit(:last_name, :first_name, :organization, :phone, :id_number, :email, :password, :password_confirmation, :admin)
     end
 end

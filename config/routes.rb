@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root :to => "employees#index"
+    resources :employees
+  end
+  
   root 'user_sessions#new'
   resources :user_sessions
   resources :employees
@@ -7,10 +12,6 @@ Rails.application.routes.draw do
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
-    
-  namespace :admin do
-    resources :employees
-  end
 
   resources :participants do
     collection { post :import }

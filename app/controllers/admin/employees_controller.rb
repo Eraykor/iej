@@ -1,10 +1,11 @@
 class Admin::EmployeesController < ApplicationController
   before_action :set_admin_employee, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:index, :new, :create]
+  before_action :require_admin
 
   # GET /admin/employees
   # GET /admin/employees.json
   def index
+    @employees = Employee.all
     @admin_employees = Admin::Employee.all
   end
 
@@ -15,6 +16,7 @@ class Admin::EmployeesController < ApplicationController
 
   # GET /admin/employees/new
   def new
+    @employee = Employee.new
     @admin_employee = Admin::Employee.new
   end
 
@@ -42,7 +44,7 @@ class Admin::EmployeesController < ApplicationController
   # PATCH/PUT /admin/employees/1.json
   def update
     respond_to do |format|
-      if @admin_employee.update(admin_employee_params)
+      if @employee.update(employee_params)
         format.html { redirect_to @admin_employee, notice: 'Employee was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_employee }
       else
@@ -65,11 +67,15 @@ class Admin::EmployeesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_employee
-      @admin_employee = Admin::Employee.find(params[:id])
+      @employee = Employee.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_employee_params
       params.require(:admin_employee).permit(:last_name, :first_name, :organization, :phone, :email, :id_number, :password, :password_confirmation)
+    end
+    
+    def require_admin
+        redirect_to(:employees) unless current_user.admin?
     end
 end
