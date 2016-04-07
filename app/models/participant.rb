@@ -26,9 +26,14 @@ class Participant < ActiveRecord::Base
   validates :expected_process, presence: true
   validates :entry_solution, presence: true
   validates :output_solution, presence: true
+  validate :max_26
 
-
-
+  def max_26
+    if self.birth_date
+        errors.add(:birth_date, 'interdit aux plus de 26 ans.') if self.birth_date <= 26.years.ago.to_date
+    end
+  end
+            
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Participant.create! row.to_hash
