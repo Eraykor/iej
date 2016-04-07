@@ -9,10 +9,8 @@
 <body>
 
   <ul class="nav nav-tabs">
-    <li role="presentation">
       <% if current_user %>
       <%= link_to "Éditer le profil", edit_employee_path(current_user.id), :class =>'active' %>
-    </li>
     <li role="presentation">
       <%= link_to "Logout", :logout, method: :post, :class =>'active' %>
     </li>
