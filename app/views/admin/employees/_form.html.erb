@@ -11,39 +11,91 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :organization %><br>
-    <%= f.text_field :organization %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.number_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :id_number %><br>
-    <%= f.text_field :id_number %>
-  </div>
-  <div class="field">
-   <%= f.label :password %><br />
-   <%= f.password_field :password %>
-  </div>
-  <div class="field">
-   <%= f.label :password_confirmation %><br />
-   <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-      <%= f.submit %>
-  </div>
+
+
+  <div class="panel-body">
+    <div class="row center-block">
+      <div class="col-lg-4 col-lg-offset-4">
+      </div>
+      <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Identité</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group list-unstyled">
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :last_name %></label>
+                  <%= f.text_field :last_name, :class => 'form-control'%>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :first_name %></label>
+                  <%= f.text_field :first_name, :class => 'form-control' %>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :organization %></label><br>
+                  <%= f.text_field :organization, :class => 'form-control' %>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :phone %></label>
+                  <%= f.number_field :phone, :class => 'form-control' %>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :email %></label>
+                  <%= f.email_field :email, :class => 'form-control' %>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="texte"><%= f.label :id_number %></label>
+                  <%= f.text_field :id_number, :class => 'form-control' %>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <div id="photo_attachment_container">
+                    <%= f.label :password %><br><br>
+                    <%= f.password_field :password %><br>
+                  </div>
+                </div>
+            </li>
+          <li class="list-group-item">
+                <div class="form-group">
+                  <div id="photo_attachment_container">
+                    <%= f.label :password_confirmation %><br><br>
+                    <%= f.password_field :password_confirmation %><br>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <div id="form_group">
+                      <%= f.label :admin %><br><br>
+                      <%= f.check_box :admin %><br>
+                  </div>
+                </div>
+            </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <div class="actions">
+                    <div class="pull-right">  <%= f.submit 'VALIDER', :class => 'btn btn-primary  block-right' %></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-lg-offset-4">
+      </div>
+    </div>
 <% end %>
