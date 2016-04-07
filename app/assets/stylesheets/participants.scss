@@ -33,7 +33,6 @@ margin: 20px 0 20px;
 .list-group-item {
   border: none;
   line-height:3px;
-  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -61,22 +60,18 @@ img {
 }
 
 input {
-  clear: both;
+
 }
 
 .larg-bloc {
   max-width: 60px;
+
 }
 
-.panel-body {
+.form-inline {
   text-align: center;
-
 }
 
 .img-thumbnail {
   margin: auto;
-}
-
-.conteneur-img {
-
 }

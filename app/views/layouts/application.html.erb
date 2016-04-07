@@ -8,22 +8,26 @@
 </head>
 <body>
 
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_employee_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "New Admin Employee", new_admin_employee_path %> |
-      <%= link_to "New Employee", new_employee_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
+  <ul class="nav nav-tabs">
+    <li role="presentation">
+      <% if current_user %>
+      <%= link_to "Éditer le profil", edit_employee_path(current_user.id), :class =>'active' %>
+    </li>
+    <li role="presentation">
+      <%= link_to "Logout", :logout, method: :post, :class =>'active' %>
+    </li>
+  </ul>
+  <% else %>
+  <%= link_to "Nouvel administrateur employé", new_admin_employee_path %> |
+  <%= link_to "Nouvel employé", new_employee_path %> |
+  <%= link_to "Login", :login %>
+  <% end %>
+
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
-
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

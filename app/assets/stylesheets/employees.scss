@@ -2,27 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.checkbox{
+  width:50px
+}
+
 .top-buffer {
   margin-top: 10px;
 }
 .top-buffer2{
  margin-top: 40px;
 }
-.list-group-item {
- border-bottom: solid 1px black;
- line-height:3px;
+
+.titleprghp {
+background:#555;
+height: 46px;
+color: #000;
+font-size: 23px;
+height: 46px;
+line-height: 40px;
+padding: 0 0 0 20px;
+margin: 20px 0 20px;
 }
+
+.list-group-item {
+  border: none;
+  line-height:3px;
+}
+
+li .list-group-item{
+  line-height:3px;
+  list-style: none;
+  margin: 0 0 9px 15px;
+}
+
+.inline {
+display: inline-block;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
  text-transform: uppercase;
  text-align: center;
 }
-.submit {
- background-color: red;
-}
-.list-group-item {
- border: none;
- line-height:3px;
-}
+
 li .list-group-item{
  line-height:3px;
  list-style: none
@@ -31,4 +52,25 @@ label {
 min-width: 120px;
 font-weight: normal;
 color: #428bca;
+}
+
+img {
+  max-height: 150px;
+}
+
+.col-lg-6 {
+  margin : 0;
+  padding: 0;
+}
+
+.larg-bloc {
+  max-width: 60px;
+}
+
+.form-inline {
+  text-align: center;
+}
+
+.img-thumbnail {
+  margin: auto;
 }
