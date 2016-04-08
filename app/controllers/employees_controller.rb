@@ -6,7 +6,6 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
-    @admin_employees = Admin::Employee.all
     @participants = Participant.all
   end
 

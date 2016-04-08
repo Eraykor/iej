@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dispositifs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dispositifs.each do |dispositif| %>
+      <tr>
+        <td><%= dispositif.name %></td>
+        <td><%= link_to 'Show', dispositif %></td>
+        <td><%= link_to 'Edit', edit_dispositif_path(dispositif) %></td>
+        <td><%= link_to 'Destroy', dispositif, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dispositif', new_dispositif_path %>

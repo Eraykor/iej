@@ -11,19 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405114132) do
+ActiveRecord::Schema.define(version: 20160408130449) do
 
-  create_table "admin_employees", force: :cascade do |t|
-    t.string   "last_name"
-    t.string   "first_name"
-    t.string   "organization"
-    t.integer  "phone"
-    t.string   "email"
-    t.string   "id_number"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "crypted_password"
-    t.string   "salt"
+  create_table "dispositifs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -48,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160405114132) do
     t.string   "parent_organization"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "organization_id"
   end
 
   create_table "participants", force: :cascade do |t|
@@ -79,16 +73,8 @@ ActiveRecord::Schema.define(version: 20160405114132) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.integer  "employee_id"
+    t.integer  "dispositif_id"
   end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

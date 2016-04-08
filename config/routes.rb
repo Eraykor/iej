@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    root :to => "employees#index"
-    resources :employees
-  end
-  
   root 'user_sessions#new'
+
+  resources :dispositifs
   resources :user_sessions
   resources :employees
-  resources :admin
   resources :participants
 
   get 'login' => 'user_sessions#new', :as => :login
@@ -15,6 +11,11 @@ Rails.application.routes.draw do
 
   resources :participants do
     collection { post :import }
+  end
+    
+  namespace :admin do
+    root :to => "employees#index"
+    resources :employees
   end
 
   resources :organizations

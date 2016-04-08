@@ -1,4 +1,6 @@
 class Organization < ActiveRecord::Base
+  has_many :employees
+    
   validates :name, presence: true
   validates :adress, presence: true
   validates :zip_code, presence: true, length: { maximum: 5 }

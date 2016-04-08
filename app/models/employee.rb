@@ -1,5 +1,6 @@
 class Employee < ActiveRecord::Base
   authenticates_with_sorcery!
+  belongs_to :organization
 
   @participants = Participant.all
   validates :last_name, presence: true
