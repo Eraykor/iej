@@ -6,53 +6,36 @@
 
 <h1>Listing Admin Employees</h1>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-      <div class="pull-right"><%= link_to 'New Employee', new_admin_employee_path, :class => 'btn btn-primary block-right' %></div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-        </div>
-        <div class="panel-body">
-          <div class="row text-center">
-
-            <table class="table table-hover">
+<table>
   <thead>
     <tr>
-      <th class="text-center"scope="row">Last name</th>
-      <th class="text-center">First name</th>
-      <th class="text-center">Organization</th>
-      <th class="text-center">Phone</th>
-      <th class="text-center">Email</th>
-      <th class="text-center">Id number</th>
-      <th class="text-center" colspan="3"></th>
+      <th>Last name</th>
+      <th>First name</th>
+      <th>Organization</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Id number</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody class="table table-hover">
-    <% @employees.each do |employee| %>
+  <tbody>
+    <% @admin_employees.each do |admin_employee| %>
       <tr>
-        <td class="text-center" scope="row"><%= employee.last_name %></td>
-        <td class="text-center"><%= employee.first_name %></td>
-        <td class="text-center"><%= employee.organization %></td>
-        <td class="text-center"><%= employee.phone %></td>
-        <td class="text-center"><%= employee.email %></td>
-        <td class="text-center"><%= employee.id_number %></td>
-        <td class="text-center"><%= link_to 'Show', admin_employee %></td>
-        <td class="text-center"><%= link_to 'Edit', edit_admin_employee_path(admin_employee) %></td>
-        <td class="text-center"><%= link_to 'Destroy', admin_employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_employee.last_name %></td>
+        <td><%= admin_employee.first_name %></td>
+        <td><%= admin_employee.organization %></td>
+        <td><%= admin_employee.phone %></td>
+        <td><%= admin_employee.email %></td>
+        <td><%= admin_employee.id_number %></td>
+        <td><%= link_to 'Show', admin_employee %></td>
+        <td><%= link_to 'Edit', edit_admin_employee_path(admin_employee) %></td>
+        <td><%= link_to 'Destroy', admin_employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<br>
 
 <%= link_to 'New Employee', new_admin_employee_path %>
